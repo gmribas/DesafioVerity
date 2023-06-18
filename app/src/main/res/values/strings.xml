@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Desafio Verity</string>
+    <string name="user_list_screen_name">Usuários Github</string>
 </resources>

@@ -3,6 +3,8 @@ package com.gmribas.desafioverity
 import android.app.Application
 import com.gmribas.desafioverity.domain.di.useCaseModule
 import com.gmribas.desafioverity.network.di.networkModule
+import com.gmribas.desafioverity.presentation.di.modelUIModel
+import com.gmribas.desafioverity.presentation.di.viewModelModule
 import com.gmribas.desafioverity.repository.di.repositoryMapperModule
 import com.gmribas.desafioverity.repository.di.repositoryModule
 import com.gmribas.desafioverity.repository.di.sourceModule
@@ -25,7 +27,9 @@ class MainApplication: Application() {
                 sourceModule,
                 repositoryMapperModule,
                 repositoryModule,
-                useCaseModule
+                useCaseModule,
+                modelUIModel,
+                viewModelModule
             )
 
             modules(modules)
