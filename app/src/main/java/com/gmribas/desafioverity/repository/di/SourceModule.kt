@@ -1,7 +1,7 @@
 package com.gmribas.desafioverity.repository.di
 
-import com.gmribas.desafioverity.repository.UserSource
-import com.gmribas.desafioverity.repository.UserSourceImpl
+import com.gmribas.desafioverity.repository.source.UserSource
+import com.gmribas.desafioverity.repository.source.UserSourceImpl
 import org.koin.dsl.module
 
 val sourceModule = module {

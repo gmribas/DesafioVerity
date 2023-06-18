@@ -1,4 +1,4 @@
-package com.gmribas.desafioverity.domain
+package com.gmribas.desafioverity.domain.model
 
 data class UserDomain (
     val login: String,

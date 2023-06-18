@@ -1,8 +1,6 @@
 package com.gmribas.desafioverity.repository.mapper
 
-import com.gmribas.desafioverity.domain.UserDetailsDomain
-import com.gmribas.desafioverity.domain.UserDomain
-import com.gmribas.desafioverity.network.dto.UserDTO
+import com.gmribas.desafioverity.domain.model.UserDetailsDomain
 import com.gmribas.desafioverity.network.dto.UserDetailsDTO
 
 interface UserDetailsMapper {
