@@ -1,13 +1,15 @@
 package com.gmribas.desafioverity.presentation.common
 
+import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.ViewModel
 import com.gmribas.desafioverity.domain.common.ResultUseCase
 import com.gmribas.desafioverity.domain.exception.UseCaseException
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 
-abstract class BaseViewModel<T : Any> : ViewModel() {
+abstract class BaseViewModel<T : Any> : ViewModel(), DefaultLifecycleObserver {
 
     protected val errorHandler = CoroutineExceptionHandler { _, exception ->
         ResultUseCase.Error(UseCaseException.createFromThrowable(exception))
@@ -18,7 +20,7 @@ abstract class BaseViewModel<T : Any> : ViewModel() {
         MutableStateFlow(setInitialState())
     }
 
-    val viewState: StateFlow<UiState<T>> = _viewState
+    val viewState: StateFlow<UiState<T>> = _viewState.asStateFlow()
 
     private val initialState: UiState<T> by lazy { setInitialState() }
 

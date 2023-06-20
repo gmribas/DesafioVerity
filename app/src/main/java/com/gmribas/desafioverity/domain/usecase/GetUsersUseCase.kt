@@ -13,6 +13,6 @@ class GetUsersUseCase(private val repository: UserRepository): CommonUseCase<Get
     data class Response(val response: List<UserDomain>) : CommonUseCase.Response
 
     override suspend fun process(request: Request): Flow<Response> {
-        return flow { repository.getUsers() }
+        return flow { emit(Response(repository.getUsers())) }
     }
 }

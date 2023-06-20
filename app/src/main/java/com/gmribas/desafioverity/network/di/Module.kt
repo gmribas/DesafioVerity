@@ -1,6 +1,6 @@
 package com.gmribas.desafioverity.network.di
 
-import com.gmribas.desafioverity.BuildConfig.BASE_URL
+import com.gmribas.desafioverity.BuildConfig
 import com.gmribas.desafioverity.network.ApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit
 val networkModule = module {
     single {
         Retrofit.Builder()
-            .baseUrl(getProperty(BASE_URL) as String)
+            .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(provideOkhttp())
             .build()

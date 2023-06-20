@@ -10,7 +10,10 @@ import kotlinx.coroutines.flow.map
 abstract class CommonUseCase<RQ : CommonUseCase.Request, RP : CommonUseCase.Response>() {
 
     suspend fun execute(request: RQ) = process(request)
-        .map { ResultUseCase.Success(it) as ResultUseCase<RP> }
+        .map {
+            it.hashCode()
+            ResultUseCase.Success(it) as ResultUseCase<RP>
+        }
         .flowOn(Dispatchers.IO)
         .catch {
             emit(ResultUseCase.Error(UseCaseException.createFromThrowable(it)))

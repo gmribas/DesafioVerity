@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Desafio Verity</string>
+    <string name="ok">OK</string>
     <string name="user_list_screen_name">Usuários Github</string>
+    <string name="user_list_screen_error_title">Erro</string>
+    <string name="user_list_screen_error_message">Não foi possível carregar a lista de usuários devido: </string>
 </resources>
