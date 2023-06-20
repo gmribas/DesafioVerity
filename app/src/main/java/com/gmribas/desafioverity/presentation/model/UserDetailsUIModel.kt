@@ -1,6 +1,6 @@
-package com.gmribas.desafioverity.domain.model
+package com.gmribas.desafioverity.presentation.model
 
-data class UserDetailsDomain (
+data class UserDetailsUIModel (
     val login: String,
     val id: Long,
     val nodeID: String,
@@ -31,4 +31,4 @@ data class UserDetailsDomain (
     val following: Long,
     val createdAt: String,
     val updatedAt: String
-) 
+)

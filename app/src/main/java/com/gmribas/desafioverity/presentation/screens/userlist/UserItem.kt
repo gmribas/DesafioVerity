@@ -1,4 +1,4 @@
-package com.gmribas.desafioverity.presentation
+package com.gmribas.desafioverity.presentation.screens.userlist
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

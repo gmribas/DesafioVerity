@@ -11,6 +11,8 @@ class UserUIMapperImpl : CommonResultConverter<GetUsersUseCase.Response, List<Us
         return data.response.map { it.toUiModel() }
     }
 
+    fun domainToUiModel(domain: UserDomain): UserUIModel = domain.toUiModel()
+
     private fun UserDomain.toUiModel(): UserUIModel {
         return UserUIModel(
             login = login,

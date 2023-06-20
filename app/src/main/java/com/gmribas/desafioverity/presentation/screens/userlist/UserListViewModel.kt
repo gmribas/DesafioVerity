@@ -1,4 +1,4 @@
-package com.gmribas.desafioverity.presentation
+package com.gmribas.desafioverity.presentation.screens.userlist
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.viewModelScope

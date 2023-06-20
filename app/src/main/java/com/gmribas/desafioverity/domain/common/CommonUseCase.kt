@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
+import timber.log.Timber
 
 abstract class CommonUseCase<RQ : CommonUseCase.Request, RP : CommonUseCase.Response>() {
 
@@ -16,6 +17,7 @@ abstract class CommonUseCase<RQ : CommonUseCase.Request, RP : CommonUseCase.Resp
         }
         .flowOn(Dispatchers.IO)
         .catch {
+            Timber.e(it)
             emit(ResultUseCase.Error(UseCaseException.createFromThrowable(it)))
         }
 

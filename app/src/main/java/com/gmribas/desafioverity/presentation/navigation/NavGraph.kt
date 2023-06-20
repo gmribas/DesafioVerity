@@ -7,7 +7,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.gmribas.desafioverity.presentation.UserListScreen
+import com.gmribas.desafioverity.presentation.screens.userdetails.UserDetailsScreen
+import com.gmribas.desafioverity.presentation.screens.userlist.UserListScreen
 
 @Composable
 fun NavGraph(navController: NavHostController = rememberNavController()) {
@@ -19,11 +20,11 @@ fun NavGraph(navController: NavHostController = rememberNavController()) {
         composable(Screens.UserList.route) {
             UserListScreen(navController)
         }
-//        composable(
-//            Screens.UserDetails.route + "/{userId}",
-//            arguments = listOf(navArgument("userId") { type = NavType.IntType })
-//        ) {
-//            ContactDetailsScreen(navController)
-//        }
+        composable(
+            Screens.UserDetails.route + "/{userName}",
+            arguments = listOf(navArgument("userName") { type = NavType.StringType })
+        ) {
+            UserDetailsScreen(navController)
+        }
     }
 }

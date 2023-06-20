@@ -4,7 +4,6 @@ import android.app.Application
 import com.gmribas.desafioverity.domain.di.useCaseModule
 import com.gmribas.desafioverity.network.di.networkModule
 import com.gmribas.desafioverity.presentation.di.mapperModule
-import com.gmribas.desafioverity.presentation.di.modelUIModel
 import com.gmribas.desafioverity.presentation.di.viewModelModule
 import com.gmribas.desafioverity.repository.di.repositoryMapperModule
 import com.gmribas.desafioverity.repository.di.repositoryModule
@@ -29,7 +28,6 @@ class MainApplication: Application() {
                 repositoryMapperModule,
                 repositoryModule,
                 useCaseModule,
-                modelUIModel,
                 viewModelModule,
                 mapperModule
             )

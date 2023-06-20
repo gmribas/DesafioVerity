@@ -30,11 +30,11 @@ fun rememberLifecycleEvent(lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.
 }
 
 @Composable
-fun <LO : LifecycleObserver> LO.observeLifecycle(lifecycle: Lifecycle) {
+fun <LO : LifecycleObserver> LO.ObserveLifecycle(lifecycle: Lifecycle) {
     DisposableEffect(lifecycle) {
-        lifecycle.addObserver(this@observeLifecycle)
+        lifecycle.addObserver(this@ObserveLifecycle)
         onDispose {
-            lifecycle.removeObserver(this@observeLifecycle)
+            lifecycle.removeObserver(this@ObserveLifecycle)
         }
     }
 }
