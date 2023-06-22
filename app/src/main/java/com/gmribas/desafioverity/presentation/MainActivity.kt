@@ -1,4 +1,4 @@
-package com.gmribas.desafioverity
+package com.gmribas.desafioverity.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,7 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.gmribas.desafioverity.presentation.navigation.NavGraph
-import com.gmribas.desafioverity.ui.theme.DesafioVerityTheme
+import com.gmribas.desafioverity.presentation.theme.DesafioVerityTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

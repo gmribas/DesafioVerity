@@ -1,8 +1,10 @@
 package com.gmribas.desafioverity.presentation.screens.userdetails
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -22,6 +24,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -131,14 +135,14 @@ fun UserDetailsScreen(navController: NavController, viewModel: UserDetailsViewMo
 private fun UserDetails(userDetails: UserDetailsUIModel) {
     Column(
         modifier = Modifier
-//            .align(Alignment.TopCenter)
-            .padding(top = 36.dp),
+            .padding(top = 36.dp)
+            .fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
             painter = rememberAsyncImagePainter(userDetails.avatarURL),
             contentDescription = userDetails.name,
-            modifier = Modifier.size(128.dp)
+            modifier = Modifier.size(128.dp).clip(RoundedCornerShape(64.dp))
         )
         Spacer(modifier = Modifier.padding(bottom = 24.dp))
         Text(
@@ -158,12 +162,6 @@ private fun UserDetails(userDetails: UserDetailsUIModel) {
             overflow = TextOverflow.Ellipsis,
             maxLines = 1
         )
-
-        Spacer(
-            modifier = Modifier
-                .fillMaxWidth()
-                .width(4.dp)
-        )
     }
 }
 
@@ -174,6 +172,7 @@ private fun UserRepos(repos: List<UserRepoUIModel>) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 32.dp)
+                .background(Color.White)
         ) {
             items(repos.size) { index ->
                 val item = repos[index]

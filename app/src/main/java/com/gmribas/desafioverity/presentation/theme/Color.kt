@@ -1,4 +1,4 @@
-package com.gmribas.desafioverity.ui.theme
+package com.gmribas.desafioverity.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
